@@ -11,6 +11,7 @@ class PredatorController {
   private var allApexPredators: [ApexPredator] = []
   var apexPredators: [ApexPredator] = []
   let typeFilters = ["All", "Land", "Air", "Sea"]
+  let movieFilters = ["All", "Jurassic Park", "The Lost World: Jurassic Park", "Jurassic Park III", "Jurassic World", "Jurassic World: Fallen Kingdom"]
 
   init() {
     decodeApexPredatorData()
@@ -55,6 +56,13 @@ class PredatorController {
   func filterBy(type: String) {
     switch type {
     case "Land", "Air", "Sea": apexPredators = allApexPredators.filter { $0.type == type.lowercased()}  // filter: true == keep, false == remove, not implace creates a temp array and assigns it back to orig array
+    default: apexPredators = allApexPredators // "All" would be included in default clause
+    }
+  }
+
+  func filterByMovie(type: String) {
+    switch type {
+    case "Jurassic Park", "The Lost World: Jurassic Park", "Jurassic Park III", "Jurassic World", "Jurassic World: Fallen Kingdom": apexPredators = allApexPredators.filter { $0.movies.contains(type) }  // filter: true == keep, false == remove, not implace creates a temp array and assigns it back to orig array
     default: apexPredators = allApexPredators // "All" would be included in default clause
     }
   }

@@ -11,17 +11,18 @@ struct ContentView: View {
   let apController = PredatorController() // create instance of a Predator Controller and runs init to decode JSON data
   @State var sortAlphabetical = false
   @State var currentFilter = "All"
-
+  @State var currentMovieFilter = "All"
+  
   var body: some View {
     apController.filterBy(type: currentFilter) // Filter by types first
-
+    apController.filterByMovie(type: currentMovieFilter)
     // Need to add return to NavigationView, or the below if statement thinks the one liners are trying to implicitly return a View
     if sortAlphabetical {
       apController.sortByAlphabetical()
     } else {
       apController.sortByMovieAppearance()
     }
-
+    
     // returns single view
     return NavigationView {
       List {
@@ -52,15 +53,28 @@ struct ContentView: View {
               ForEach(apController.typeFilters, id:\.self) { type in // make string array identifiable
                 HStack {
                   Text(type)
-
+                  
                   Spacer()
-
+                  
                   Image(systemName: apController.typeIcon(for: type))  // icon names in switch statement in controller
                 }
               }
             }
           } label: {
             Image(systemName: "slider.horizontal.3")
+          }
+        }
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Menu {
+            Picker("MovieFilter", selection: $currentMovieFilter.animation()) { // $currentFilter bound to Picker, will update State and cause re-render also adds animation picker menu bounces out
+              ForEach(apController.movieFilters, id:\.self) { type in // make string array identifiable
+                HStack {
+                  Text(type)
+                }
+              }
+            }
+          } label: {
+            Image(systemName: "video")
           }
         }
       }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50413881286A4CF600C259ED /* PredatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50413880286A4CF600C259ED /* PredatorImage.swift */; };
 		50D46C0728688B510041A98E /* JP_Apex_PredatorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46C0628688B510041A98E /* JP_Apex_PredatorsApp.swift */; };
 		50D46C0928688B510041A98E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D46C0828688B510041A98E /* ContentView.swift */; };
 		50D46C0B28688B530041A98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D46C0A28688B530041A98E /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50413880286A4CF600C259ED /* PredatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredatorImage.swift; sourceTree = "<group>"; };
 		50D46C0328688B510041A98E /* JP Apex Predators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JP Apex Predators.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D46C0628688B510041A98E /* JP_Apex_PredatorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JP_Apex_PredatorsApp.swift; sourceTree = "<group>"; };
 		50D46C0828688B510041A98E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				50D46C0828688B510041A98E /* ContentView.swift */,
 				50D46C1A2868A35A0041A98E /* PredatorRow.swift */,
 				50D46C1C2868B8890041A98E /* PredatorDetail.swift */,
+				50413880286A4CF600C259ED /* PredatorImage.swift */,
 				50D46C1428688CAD0041A98E /* jpapexpredators.json */,
 				50D46C0A28688B530041A98E /* Assets.xcassets */,
 				50D46C0C28688B530041A98E /* Preview Content */,
@@ -155,6 +158,7 @@
 			files = (
 				50D46C19286891990041A98E /* PredatorController.swift in Sources */,
 				50D46C1728688F050041A98E /* ApexPredator.swift in Sources */,
+				50413881286A4CF600C259ED /* PredatorImage.swift in Sources */,
 				50D46C0928688B510041A98E /* ContentView.swift in Sources */,
 				50D46C1D2868B8890041A98E /* PredatorDetail.swift in Sources */,
 				50D46C0728688B510041A98E /* JP_Apex_PredatorsApp.swift in Sources */,

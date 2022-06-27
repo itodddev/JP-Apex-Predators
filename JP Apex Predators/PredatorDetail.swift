@@ -13,17 +13,22 @@ struct PredatorDetail: View {
   var body: some View {
     ScrollView {
       VStack(alignment: .trailing) {
-        Image(predator.type)
-          .resizable()
-          .scaledToFit()
 
-        Image(predator.name.lowercased().filter { $0 != " "})
-          .resizable()
-          .scaledToFit()
-          .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 4)
-          .shadow(color: .black, radius: 6, x: 0, y: 0)
-          .offset(y: -210)
-          .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+        ZStack(alignment: .trailing) {
+          Image(predator.type)
+            .resizable()
+            .scaledToFit()
+
+          NavigationLink(destination: PredatorImage(predator: predator)) {
+            Image(predator.name.lowercased().filter { $0 != " "})
+              .resizable()
+              .scaledToFit()
+              .frame(width: UIScreen.main.bounds.width / 1.5, height: UIScreen.main.bounds.height / 4)
+              .shadow(color: .black, radius: 6, x: 0, y: 0)
+              .offset(y: 60)
+              .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+          }
+        }
 
         VStack(alignment: .leading){
           Text(predator.name)
@@ -56,7 +61,7 @@ struct PredatorDetail: View {
             .font(.caption)
             .foregroundColor(.blue)
         }
-        .padding(.top, -230)
+        //.padding(.top, 230)
         .padding()
       }
     }
